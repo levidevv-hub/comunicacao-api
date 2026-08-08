@@ -47,4 +47,10 @@ public class ComunicacaoController {
     public ResponseEntity<ComunicacaoOutDTO> cancelarStatus(@RequestParam String emailDestinatario) {
         return ResponseEntity.ok(service.alterarStatusComunicacao(emailDestinatario));
     }
+
+    @GetMapping("/notificados")
+    public ResponseEntity<ComunicacaoOutDTO> buscarStatusEnviado(@RequestParam String emailDestinatario) {
+        return  ResponseEntity.ok(service.buscarStatusEnviado(emailDestinatario));
+    }
+
 }
